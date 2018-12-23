@@ -1,0 +1,28 @@
+<div class="users-body">
+  <h4 class="text-center">Users List</h4>
+  <br>
+  <input type="text" [(ngModel)]="search" (ngModelChange)="searchChange($event)" placeholder="Search by name here...">
+
+  <table *ngIf="users.length > 0" border="1">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>UserName</th>
+      <th>City</th>
+      <th>ZipCode</th>
+      <th>Company name</th>
+      <th>Webside</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" >
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.address.zipcode}}</td>
+        <td>{{user.company.name}}</td>
+        <td>{{user.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
